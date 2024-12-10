@@ -1,0 +1,22 @@
+In :  import sys
+In :  sys.path.append(r"c:\temp")
+In :  import importlib
+In :  reload = importlib.reload
+In :  import LADecoderPECI as dd
+In :  import LADecoderPECI_DK as dd
+In :  reload(dd)
+In :  input_file = r"c:\temp\memhot.csv"
+In :  pcsv_data = dd.parser_peci_csv(input_file)
+In :  t = pcsv_data[42713]
+In :  t
+In :  p = dd.PECI_TXN(t, 'BUS_PECI')
+In :  rr = dd.RdEndPointCfg(p)
+In :  rr.bus
+In :  rr.dev
+In :  rr.func
+In :  rr.show_decode()
+In :  t = pcsv_data[42710]
+In :  t
+In :  p = dd.PECI_TXN(t, 'BUS_PECI') #if use xd230_cpu1_peci_correct_filter_spdfw.CSV, use command "p = dd.PECI_TXN(t, '')"
+In :  rr = dd.RdEndPointCfg(p)
+In :  rr.show_decode()
